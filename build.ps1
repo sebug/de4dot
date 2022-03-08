@@ -3,6 +3,7 @@ $ErrorActionPreference = 'Stop'
 #
 # dotnet build isn't used because it can't build net35 tfms
 #
+# Note to self: can disable some of the older builds if they no longer work with Github Actions
 
 msbuild -v:m -restore -t:Build -p:Configuration=Release -p:TargetFramework=net35 de4dot.netframework.sln
 if ($LASTEXITCODE) { exit $LASTEXITCODE }
